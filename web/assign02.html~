@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Li Hai's Home Page</title>
+<style>
+blockquote {
+  font-style: italic;
+}
+body {background-color: powderblue;}
+h1   {color: blue;
+      font-style: oblique;
+       border-style: solid;
+  border-width: 5px;}
+p    {color: red;
+      font-style: normal;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+</style>
+</head>
+<body>
+
+<h1><b>Welcome to Li Hai's Home Page</b></h1>
+<p><i>My name is Li Hai, my major is interdisciplinary studies, I am from China and Japan.</i></p>
+
+<hr>
+
+<a href="index.html">CS 213 Assignments</a>
+
+<hr>
+
+<blockquote cite="https://www.bible.com/bible/1/1CO.13.KJV"">
+1 Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.
+<br>
+2 And though I have the gift of prophecy, and understand all mysteries, and all knowledge; and though I have all faith, so that I could remove mountains, and have not charity, I am nothing.
+<br>
+3 And though I bestow all my goods to feed the poor, and though I give my body to be burned, and have not charity, it profiteth me nothing.
+</blockquote>
+<img src="me.jpg" alt="My photo">
+
+<table id="Class Schedule">
+  <tr>
+    <th>CS213</th>
+    <th>Web Engineering 1</th>
+    <th>Learning how to make web pages</th>
+    <th>Winter 2020</th>
+    <th>0:00~24:00</th>
+    <th>Online</th>
+  </tr>
+<tr>
+    <th>CS470</th>
+    <th>Computer Security</th>
+    <th>Learning how to protect your computer</th>
+    <th>Winter 2020</th>
+    <th>0:00~24:00</th>
+    <th>Online</th>
+  </tr>
+
+</body>
+</html>

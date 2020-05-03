@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <title>Assign08</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="ass7.css" />    
+    <script src="assign08.js"></script>
+    </head>
+    <body onload="loadMassage()">
+    <form name="myForm" id="formid" onchange= "checkboxes()" onsubmit="submitNote(); return false" onreset="reset1()" >
+    <p id="demo" style="color:red;"></p>
+       First Name <input type="text" name="first_name" id="first" required><br>
+       Last_name <input type="text" name="last_name" id="last" required><br>
+       Address <input type="text" name="address" id="addr" required><br>
+       Phone <input type="text" name="phone" id="pho" pattern="^[1-9]\d{2}-\d{3}-\d{4}" required><br>
+       <td><input type="checkbox" name="item_0" />item_1 &nbsp; $1.00</td>
+       <td><input type="checkbox" name="item_1" />item_2 &nbsp; $1.00</td>
+       <td><input type="checkbox" name="item_2" />item_3 &nbsp; $1.00</td>
+       <td><input type="checkbox" name="item_3" />item_4 &nbsp; $1.00</td>
+       <p name="total" class="className" id="TotalField"></p>
+       
+       <p>Please select your payment method:</p>
+       <input type="radio" id="visa" name="card" value="visa" required>
+       <label for="visa">Visa</label>
+       <input type="radio" id="master" name="card" value="master">
+       <label for="master">Master</label>
+       <input type="radio" id="americanExpress" name="card" value="americanExpress">
+       <label for="americanExpress">AmericanExpress</label>
+
+  <br>
+       Credit Card # <input type="text" name="credit_card" id="creditCard" pattern="\d{16}" required><br>  
+       Credit Card Expiration Date <input type="text" name="exp_date" id="exp_date" pattern="^((0[1-9])|(1[0-2]))\/(20(?:1[7-9]|[2-9][0-9]))" required><br> 
+       <input type="reset" id="clear" name="reset">
+       <input type="submit" name="validate" id="" value="Submit" onclick="validateForm()">
+    <p id="demo2" style="color:red;"></p>
+    </form>
+       
+
+    </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="BYU official website">
+  <meta name="keywords" content="BYU, Brigham Young University">
+  <meta name="author" content="Li Hai">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brigham Young University</title>
+<link rel="stylesheet" type="text/css" href="ass6.css" />
+<style>
+
+.item4 {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: relative;
+  height: 95%;
+  overflow: auto;
+}
+
+.item4 a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.item4 a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.item4 a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.item5 {
+  margin-left: 30px;
+  padding: 10px 30px;
+  height: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .item4 {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .item4 a {float: left;}
+  div.item5 {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .item4 a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu;    
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;}
+  
+  .item2 a{
+  background-color: #f1f1f1;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 0rem auto auto auto;
+  text-align: center;
+  font-size: 30px;
+}
+.item3 { grid-area: main; }
+.item4 { grid-area: sidebar; }
+.item5 { grid-area: right; }
+.item6 { grid-area: links; }
+.item7 { grid-area: footer; background: darkblue; text-align: center; color: white;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu menu menu menu'
+    'main main main main main main'
+    'sidebar right right right right right'
+    'links links links links links links'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+<div class="grid-container">
+
+<div class="item1">
+<a href="assign06.html"><img id="logoimg" src="../ass4/images/logo.gif" alt="BYULogo" /></a>
+<a href="BYU.html"><img id="byu" src="../ass4/images/logo_2.gif" alt="Brigham Young University" /></a>
+</div>
+
+<div class="item2">
+<a href="assign06_2.html">University</a>
+<a href="assign06_3.html">Academics</a> 
+<a href="assign06_4.html">Athletics</a>
+<a href="assign06_5.html">Arts</a>
+</div>
+
+<div class="item3"><img src="art.PNG" style="max-width:100%;height:auto;" alt="BYUVisual" /></div>
+
+<div class="item4">
+  <a class="active" href="#Arts">Arts & Museums</a>
+  <a href="#concerts">Concerts and Performances</a>
+  <a href="#museum">Life Science Museum</a>
+  <a href="#museumArt">Museum of Art</a>
+  <a href="#Paleontology">Museum of Paleontology</a>
+  <a href="#culture">Museum of Peoples and Cultures</a>
+</div>
+
+<div class="item5">
+  <h2>BYU Arts</h2>
+  <p>BYU Arts is the producing and presenting organization for the Brigham Young University College of Fine Arts and Communications. The Division of Arts Production provides marketing and production services for the more than 500 annual performances and events sponsored by the Department of Dance, Department of Theatre Arts, Department of The School of Music, and BRAVO! Professional Performing Arts Series. Performances are staged in the Harris Fine Arts Center, Marriott Center, and Richards Building. The division also supports the university's performing groups in other venues on campus as well as on tour throughout Utah, the United States, and the world.</p>
+  <br>
+
+  <br>
+  <br>
+  <h3>Contact Information</h3>
+   <p>Bean Education</p>
+   <p>(801) 422-6698</p>
+   <p>beanmuseum@gmail.com</p>
+ 
+</div>
+
+
+
+
+<div class="item6">
+
+  <div class="left">
+<h4>CONTACT</h4>
+<br>
+<ul class="wbc" style="color: black; font-size: 12px">
+<li>Brigham Young University</li>
+<li>Provo, UT 84602</li>
+<li>801-422-4636</li>
+</ul>
+  </div>
+
+  <div class="middle1">
+<h4>RESOURCES</h4>
+<ul class="ccc" style="color: blue; font-size: 12px;">
+<li>A-Z Index</li>
+<li>BYU Mobile App</li>
+<li>Counseling & Career Center</li>
+<li>Helping Distressed Students</li>
+<li>Library</li>
+<li>Office Of IT</li>
+<li>Title IX</li>
+<li>University Police&Parking</li>
+</ul>
+  </div>
+	
+  <div class="middle2">				
+<h4>OTHER CES SCHOOLS</h4>
+<ul class="ccc" style="color: blue; font-size: 12px">
+<li>BYU-Hawaii</li>
+<li>BYU-Idaho</li>
+<li>BYU-Pathway Worldwide</li>
+<li>LDS Business College</li>
+</ul>
+  </div>
+
+  <div class="right">
+<h4>CONNECT</h4>
+<ul class="ccc" style="color: blue; font-size: 12px">
+<li></li>
+<li>BYU Alumni</li>
+<li>BYU Athletics</li>
+<li>BYU News</li>
+<li>BYU Store</li>
+<li>BYUtv</li>
+</ul>
+  </div>
+</div>
+
+<div class="item7">
+<div class="footer">Brigham Young University</div>
+<address>Provo, UT 84602, USA | 801-422-4636 | &copy; 2020 All Rights Reserved</address>
+</div>
+
+</div>
+</div>
+</body>
+
+</html>

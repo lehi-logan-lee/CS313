@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>W13 Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+* {
+    background-color: lightgray;
+}
+h1, p, table {
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  margin: 0 auto; 
+  font-family:Verdana, Geneva, sans-serif; 
+  padding:6px;
+  width: 830px;
+  font-size: 15px;
+}
+
+fieldset {
+  width:800px;
+  padding: 0 10px 10px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  padding-top: 9px;
+}
+
+#performanceInfo{
+   display: flex;
+   justify-content: center;
+   margin: 10px;
+   text-align: center;
+   padding-bottom: 10px;
+}
+
+.studentNo{
+	 float: left;
+   padding-right: 15px;
+}
+    
+.left{
+	 float: left;
+   padding-right: 15px;
+}
+
+.middle1{
+   padding-right: 15px;
+	 float: left;
+}
+
+.middle2{
+   padding-right: 15px;
+	 float: left;
+}
+
+.middle3{
+   padding-right: 15px;
+	 float: left;
+}
+
+#studentInfo {
+  clear: both;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+#student2Info {
+  display: flex;
+  margin: 10px;
+}
+
+iframe {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 840px;
+  height: 300px;
+}        
+    </style>
+    <script>
+function showStudent2() {
+  var x = document.getElementById("mySelect").value;
+  if(x=="Duet")
+  {
+  document.getElementById("student2Info").innerHTML = '<div class="studentNo"><p>Student2:</p><br></div><div class="left"><label for="first_name_2"><b>First Name:</b></label><br><input name="first_name_2" type="text" id="first_name_2" required></div><div class="middle1"><label for="last_name_2"><b>Last Name:</b></label><br><input name="last_name_2" type="text" id="last_name_2" required></div><div class="middle2"><label for="student_id_2"><b>Student ID:</b></label><br><input name="student_id_2" type="text" id="student_id_2" size="10" required></div>';
+  }
+  else{document.getElementById("student2Info").innerHTML = '';}
+}
+    
+	  </script>
+  </head>
+
+  <body>
+    <h1>BYU-Idaho Music Festival</h1>
+      <form action="assign13.php" method="get" target="frame">
+      <fieldset>
+      <legend>Registeration Information:</legend>
+        
+        <fieldset>
+        <legend>Performance Info:</legend>
+        <div id="performanceInfo">
+          <div class="left">
+            <b>Type:</b><br>
+            <select  name="performance" id="mySelect" onchange="showStudent2()">
+              <option value="Solo">Solo</option>
+              <option value="Duet">Duet</option>
+              <option value="Concerto">Concerto</option>
+            </select>  
+          </div>
+
+          <div class="middle1">
+            <strong>Building:</strong><br>
+            <select name="location">
+              <option value="Austin">Austin</option>
+              <option value="Snow">Snow</option>
+              <option value="Hinckley">Hinckley</option>
+              <option value="Clarke">Clarke</option>
+            </select>  
+          </div>
+	
+          <div class="middle2">    
+            <label for="room"><b>Room #:</b></label><br>
+            <input name="room" type="text" id="room" size="8" required>     
+          </div>
+
+          <div class="right">    
+            <b>Time Slot:</b><br>
+            <select name="time_slot">
+              <option value="8:00 AM">8:00AM</option>
+              <option value="8:30 AM">8:30AM</option>
+              <option value="9:00 AM">9:00AM</option>
+              <option value="9:30 AM">9:30AM</option>
+              <option value="10:00 AM">10:00AM</option>
+              <option value="10:30 AM">10:30AM</option>
+              <option value="11:00 AM">11:00AM</option>
+              <option value="11:30 AM">11:30AM</option>
+            </select>
+          </div>
+        </div>
+        </fieldset>
+        
+        <fieldset>
+        <legend>Student Info:</legend>
+        <div id="studentInfo">
+        
+            <div class="studentNo">
+              <p>Student1:</p><br>
+            </div>
+        
+            <div class="left">
+              <label for="first_name"><b>First Name:</b></label><br>
+              <input name="first_name" type="text" id="first_name" required>
+            </div>
+
+            <div class="middle1">
+              <label for="last_name"><b>Last Name:</b></label><br>
+              <input name="last_name" type="text" id="last_name" required>
+            </div>
+	
+            <div class="middle2">
+              <label for="student_id"><b>Student ID:</b></label><br>
+              <input name="student_id" type="text" id="student_id" size="10" required>
+            </div>
+	
+            <div class="middle3">
+            <b>Skill Level:</b><br>
+            <select  name="skill">
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Pre-advanced">Pre-advanced</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+            </div>
+	
+            <div class="right">
+            <b>Instrument:</b><br>
+            <select  name="instrument">
+              <option value="Piano">Piano</option>
+              <option value="Voice">Voice</option>
+              <option value="String">String</option>
+              <option value="Organ">Organ</option>
+              <option value="Other">Other</option>
+            </select>
+            </div>
+          </div>
+          
+          <div id="student2Info"></div>
+          </fieldset>
+          
+            <br>
+            <button type="reset" name="clear">Clear Form</button>
+            <button type="submit" name="register">Register Student</button>
+            
+        </fieldset>    
+        </form>
+           
+    <br><br>
+<div style="text-align:center">    
+    <iframe name="frame" id="showTable" src="assign13.php"></iframe>
+</div>       
+  </body>
+</html>

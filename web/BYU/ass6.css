@@ -1,0 +1,110 @@
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+
+#container{
+     max-width:830px;height:auto;
+     margin: 0 auto;
+           } 
+           
+ul{
+list-style: none;
+}
+
+#header{
+   width: 100%;
+   }
+   
+#logoimg{
+      width: 5%;
+      margin-right: 20px;
+      float: left;
+      }
+      
+#byu {
+   width:92%;
+   height:45px;
+   float:right;
+}
+
+#category{
+   clear: both;
+   display: flex;
+   justify-content: center;
+   margin: 1rem auto auto auto;
+   align-items: center;
+   }
+   
+#category ul li{
+  float: left;
+  display: flex;
+  justify-content: center;
+  background-color: #f1f1f1;
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+      }
+          
+#subject ul li{
+          width: 138px;
+          float: left;
+          }
+          
+#new_student{
+         float: left;
+         }
+
+#new_student h3{
+         width: 241px;
+         float: left;
+         margin-right: 30px;
+}
+
+
+.left-half{
+  width: 65%;
+  float: left;
+  }  
+.right-half{  
+  float: right;
+  width:30%;
+}
+
+.left-half img {
+height: 100%;
+width: 100%;
+}
+
+h2{
+  clear: both;
+  }
+  
+.left{
+  width: 25%;
+	float: left;;
+}
+
+.middle1{
+  width: 25%;
+	float: left;
+}
+
+.middle2{
+  width: 25%;
+	float: left;
+}
+
+#links{background: white;}
+
+.footer{ font-size: 19px;}
+
+#end{
+     clear: both;
+     background: darkblue;
+     text-align: center;
+     color: white;
+     }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <title>JS example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="ass7.css" />    
+    </head>
+    <body>
+    <form name="myForm" id="formid" onchange="culculate()">
+       Annual Percentage Rate <input type="text" name="aprName" id="apr" ><br>
+       Loan Term (in years) <input type="text" name="termName" id="term" ><br>
+       Loan Amount (in dollars) <input type="text" name="amountName" id="amount"><br>
+       <p id="payment"></p>
+       <input type="reset" id="clear" onclick="reset()">
+       <input type="button" id="culculate" value="Payment" onclick="validateForm()">
+
+    </form>      
+       <script src="culculate.js"></script>
+
+    </body>
+</html>

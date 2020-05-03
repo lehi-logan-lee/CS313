@@ -1,0 +1,10 @@
+Toronto  	    5,429,524
+Montreal	    3,519,595
+Vancouver	    2,264,823
+Calgary	            1,237,656
+Edmonton    	    1,062,643
+Ottawa-Gatineau	      989,657
+Winnipeg	      711,925
+Quebec City	      705,103
+Hamilton	      693,645
+Cambridge             470,015

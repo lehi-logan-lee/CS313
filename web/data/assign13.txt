@@ -1,0 +1,8 @@
+<tr><td>John Allred</td><td>Austin<br>Room 123</td><td>8:00 AM</td><td>Duet for <br>Beginner Voice</td></tr>
+<tr><td>Cassy Brooks</td><td>Austin<br>Room 123</td><td>8:00 AM</td><td>Duet for <br>Beginner Voice</td></tr>
+<tr><td>John Allred</td><td>Austin<br>Room 123</td><td>8:00 AM</td><td>Solo for <br>Beginner Voice</td></tr>
+<tr><td>John Allred</td><td>Austin<br>Room 123</td><td>8:00 AM</td><td>Solo for <br>Beginner Voice</td></tr>
+<tr><td>John2 Allred</td><td>Austin<br>Room 123</td><td>9:30 AM</td><td>Solo for <br>Beginner Voice</td></tr>
+<tr><td>John2 Allred</td><td>Austin<br>Room 123</td><td>9:30 AM</td><td>Solo for <br>Beginner Voice</td></tr>
+<tr><td>Li Hai</td><td>Austin<br>Room 565</td><td>8:00 AM</td><td>Solo for <br>Intermediate Voice</td></tr>
+<tr><td>John Allred</td><td>Austin<br>Room 123</td><td>8:00 AM</td><td>Solo for <br>Beginner Piano</td></tr>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <title>PHP example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="ass7.css" />    
+    </head>
+    <body>
+       <p id="payment" style="color:red;"></p>
+    <form name="myForm" id="formid" onsubmit="return validateForm()" action="mortgage.php" method="get">
+       Annual Percentage Rate <input type="text" name="aprName" id="apr" ><br>
+       Loan Term (in years) <input type="text" name="termName" id="term" ><br>
+       Loan Amount (in dollars) <input type="text" name="amountName" id="amount"><br>
+
+       <input type="reset" id="clear" onclick="reset1()">
+       <input type="submit" id="calculate" value="Payment">
+
+    </form>
+       <script src="mortgage.js"></script>
+
+    </body>
+</html>

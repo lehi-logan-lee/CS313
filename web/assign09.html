@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <title>Assign09</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="ass9.css" />    
+    <script src="assign09.js"></script>
+    </head>
+    <body>
+
+    <form name="myForm" id="formid" oninput="loadDoc()">
+           <p><strong>Please select a country:</strong></p>
+       <input type="radio" id="us" name="country" value="US" required>
+       <label for="us">US</label>
+       <input type="radio" id="mexico" name="country" value="Mexico">
+       <label for="mexico">Mexico</label>
+       <input type="radio" id="canada" name="country" value="Canada">
+       <label for="canada">Canada</label>
+       <input type="radio" id="russia" name="country" value="Russia">
+       <label for="russia">Russia</label>
+    </form>
+    <p><b id="head"></b></P>
+    <pre id="demo"></pre><br><br>
+    
+    
+  <label for="lname">JSON Filename:</label>
+  <input type="text" id="lname" name="lname" value="json.txt">
+  <button onclick="myFunction()">Load JSON Data</button>
+  <br><br>     
+<table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Major</th>
+                  <th scope="col">GPA</th>
+                </tr>
+              </thead>
+              <tbody id="myTB">
+            </tbody>
+          </table>
+              <p id="errors" style="color:red; font-size:25px"></p>
+    </body>
+</html>

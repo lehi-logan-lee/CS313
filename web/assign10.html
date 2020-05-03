@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <title>Assign10</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="ass9.css" />    
+<script>
+function loadPhp(phpData, cFunction) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               cFunction(this);
+        }
+        };
+        xmlhttp.open("GET", phpData, true);
+        xmlhttp.send();
+}
+
+function myFunction(xmlhttp) {
+var obj = JSON.parse(xmlhttp.responseText);
+
+    for (var i = 0; i < obj.length; i++) {
+    var link;
+    if (obj[i].fileType == "file"){    
+    link = "<button onclick = \"window.location='" + obj[i].fileName + "'\">click to display</button>";
+    }
+    else {link = "";}
+    var table = "<tr><td>"+ obj[i].fileName +
+    "</td><td>" + obj[i].fileType +
+    "</td><td>" + obj[i].cwd +
+    "</td><td>"+ link +"</td></tr>";
+    document.getElementById("myTB").innerHTML += table;
+            }
+}
+</script>
+    </head>
+    <body onload="loadPhp('assign10.php', myFunction)">
+
+<table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Filename</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">CWD</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody id="myTB">
+            </tbody>
+          </table>
+    
+    </body>
+</html>
