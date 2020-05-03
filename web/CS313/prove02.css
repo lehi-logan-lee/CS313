@@ -1,0 +1,140 @@
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+
+#container{
+     max-width:830px;height:auto;
+     margin: 0 auto;
+           } 
+           
+ul{
+list-style: none;
+}
+
+
+
+h2{
+  clear: both;
+  }
+  
+.left{
+  width: 25%;
+	float: left;;
+}
+
+.middle1{
+  width: 25%;
+	float: left;
+}
+
+.middle2{
+  width: 25%;
+	float: left;
+}
+
+.footer{ font-size: 19px;}
+     
+.item4 {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: relative;
+  height: 80%;
+  overflow: auto;
+}
+
+.item4 a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.item4 a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.item4 a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.item5 {
+  margin-left: 30px;
+  padding: 10px 20px;
+  height: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .item4 {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .item4 a {float: left;}
+  div.item5 {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .item4 a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu;    
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;}
+  
+  .item2 a{
+  background-color: #f1f1f1;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 0rem auto auto auto;
+  text-align: center;
+  font-size: 30px;
+}
+.item3 { grid-area: main; width: 800px; height: 650px;}
+.item3 img { width: 800px; height: 650px;}
+.item4 { grid-area: sidebar; }
+.item5 { grid-area: right; }
+.item6 { grid-area: info; background: lightgray; text-align: center;}
+.item7 { grid-area: links; }
+.item8 { grid-area: footer; background: darkblue; text-align: center; color: white;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu menu menu menu'
+    'main main main main main main'
+    'sidebar right right right right right'
+    'info info info info info info'
+    'links links links links links links'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.wbc { color: black; font-size: 15px; }
+.ccc { color: blue; font-size: 16px; }
+iframe {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 840px;
+  height: 100px;
+}
