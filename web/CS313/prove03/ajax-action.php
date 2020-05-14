@@ -93,7 +93,7 @@ if(isset($_SESSION["cart_item"])){
                         id="add_<?php echo $item["code"]; ?>"
                         class="btnAddAction cart-action"
                         onClick="cartAction('update','<?php echo $item["code"]; ?>')">
-                        <img src="images/Update.png" />
+                        <img src="images/Update.PNG" />
                     </button>       
 
         </td>
