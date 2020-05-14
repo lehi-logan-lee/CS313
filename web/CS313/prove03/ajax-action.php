@@ -73,7 +73,7 @@ if(isset($_SESSION["cart_item"])){
 <tr>
 <th><strong>Name</strong></th>
 <th><strong>Code</strong></th>
-<th class="align-right"><strong>Quantity</strong></th>
+<th class="align-center"><strong>Quantity</strong></th>
 <th class="align-right"><strong>Unit Price</strong></th>
 <th class="align-right"><strong>subtotal</strong></th>
 <th></th>
