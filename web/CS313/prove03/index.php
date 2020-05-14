@@ -8,6 +8,7 @@ session_start();
 </head>
 <body>
 <h1>Browse Items</h1>
+
 <?php 
 require_once "product-gallery.php";
 ?>
@@ -40,6 +41,7 @@ function cartAction(action, product_code) {
         }
     });
 }
+
 </script>
 </body>
 </html>

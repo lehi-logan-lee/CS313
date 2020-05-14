@@ -31,6 +31,9 @@ function cartAction(action, product_code) {
         case "empty":
             queryString = 'action=' + action;
             break;
+        case "update":
+            queryString = 'action=' + action + '&code=' + product_code + '&quantity=' + $("#qty_" + product_code).val();;
+            break;
         }
     }
     jQuery.ajax({

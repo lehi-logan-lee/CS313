@@ -21,7 +21,8 @@ if(isset($_SESSION["cart_item"])){
 <th><strong>Name</strong></th>
 <th><strong>Code</strong></th>
 <th class="align-right"><strong>Quantity</strong></th>
-<th class="align-right"><strong>Price</strong></th>
+<th class="align-right"><strong>Unit Price</strong></th>
+<th class="align-right"><strong>subtotal</strong></th>
 <th></th>
 </tr>	
 <?php		
@@ -32,6 +33,7 @@ if(isset($_SESSION["cart_item"])){
 				<td><?php echo $item["code"]; ?></td>
 				<td align="right"><?php echo $item["quantity"]; ?></td>
 				<td align="right"><?php echo "$".$item["price"]; ?></td>
+        <td align="right"><?php echo "$".($item["price"]*$item["quantity"]); ?></td>
 				</tr>
 				<?php
         $item_total += ($item["price"]*$item["quantity"]);
@@ -39,7 +41,7 @@ if(isset($_SESSION["cart_item"])){
 		?>
 
 <tr>
-<td colspan="3" align=right><strong>Total:</strong></td>
+<td colspan="4" align=right><strong>Total:</strong></td>
 <td align=right><?php echo "$". number_format($item_total,2); ?></td>
 <td></td>
 </tr>
