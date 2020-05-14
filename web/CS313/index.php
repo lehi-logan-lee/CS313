@@ -10,7 +10,7 @@
   <h1>CSE 341 Assignments</h1>
   <ul>
   <li><a href="prove02.php">prove02</a></li>
-  <li><a href="prove03.html">prove03</a></li>
+  <li><a href="prove03/index.php">prove03</a></li>
   <li><a href="prove04.html">prove04</a></li>
   <li><a href="prove05.html">prove05</a></li>
   <li><a href="prove06.html">prove06</a></li>
