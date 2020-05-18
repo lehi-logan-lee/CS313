@@ -6,7 +6,7 @@ CREATE TABLE public.user
 , user_password      VARCHAR(30) CONSTRAINT user_2 NOT NULL
 , user_net_name     VARCHAR(30) CONSTRAINT user_3 NOT NULL);
 
-CREATE TABLE Discount
+CREATE TABLE discount
 ( discount_id        SERIAL       CONSTRAINT pdiscount_1 PRIMARY KEY    
 , discount_day      VARCHAR(30) CONSTRAINT discount_1 NOT NULL);
 
