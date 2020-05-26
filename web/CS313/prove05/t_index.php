@@ -31,7 +31,7 @@
     <tr>
       <td height="230">
       <?php  
-      echo "<a href='details.php?id={$g['code']}'<strong>" . $g['name'] .' ' . $g['comment'] .':' . $g['price'] . '</strong></a>';
+      echo "<a href='details.php?id={$g['code']}'" Product Details</a>;
       ?>
       <?php echo img_tag($g['code']) ?>
       

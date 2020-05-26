@@ -47,23 +47,33 @@
      ​
        }
         ?>
-                <?php echo img_tag($books['code']) ?>
+                <?php 
+                
+                foreach ($books as $g)
+                {
+                    echo img_tag($g['code'])
+                    <p class="goods"><?php echo $g['name'] ?></p>
+                    <p><?php echo nl2br($g['comment']) ?></p>
 
-        <p class="goods"><?php echo $books['name'] ?></p>
-        <p><?php echo nl2br($books['comment']) ?></p>
+                    <p><?php echo $g['price'] ?> USD</p>
+                  
+                    <form action="cart.php" method="post">
+                    <select name="num">
+                      <?php
+                        for ($i = 1; $i <= 10; $i++) {
+                          echo "<option>$i</option>";
+                        }
+                      ?>
+                    </select>
+                    <input type="hidden" name="code" value="<?php echo $g['code'] ?>">
+                    <input type="submit" name="submit" value="Add to cart">
+                  </form>
+                }
 
-        <p><?php echo $books['price'] ?> USD</p>
-        <form action="cart.php" method="post">
-          <select name="num">
-            <?php
-              for ($i = 1; $i <= 10; $i++) {
-                echo "<option>$i</option>";
-              }
-            ?>
-          </select>
-          <input type="hidden" name="code" value="<?php echo $g['code'] ?>">
-          <input type="submit" name="submit" value="Add to cart">
-        </form>
+                ?>
+
+
+
         
 
 </body>
