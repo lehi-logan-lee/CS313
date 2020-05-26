@@ -16,16 +16,9 @@
         require 'dbconnect.php';
         $db = get_db();
 
-        function validateInput($data){
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-
     function displayQuery($id, $db) {
         // $db=dbConnection();    
-         $stmt = $db->prepare('SELECT * FROM goods WHERE code = :id');
+         $stmt = $db->prepare('SELECT * FROM goods WHERE code = $id');
          //$name= '$name';
          $stmt->bindValue(':id', $id, PDO::PARAM_INT);
          $stmt->execute();
@@ -40,7 +33,7 @@
          // Validate & sanitize the input
          $searchText = validateInput($_GET['id']);
          // Now run the query to find the text in the database, and then save the results as a variable
-         $books = displayQuery($searchText, $db);
+         $books = displayQuery($_GET['id'], $db);
        // Change the method name
        //print_r($books);
        
