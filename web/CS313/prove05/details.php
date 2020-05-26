@@ -25,7 +25,7 @@
 
     function displayQuery($id, $db) {
         // $db=dbConnection();    
-         $stmt = $db->prepare('SELECT * FROM goods WHERE id = :id');
+         $stmt = $db->prepare('SELECT * FROM goods WHERE code = :id');
          //$name= '$name';
          $stmt->bindValue(':id', $id, PDO::PARAM_INT);
          $stmt->execute();
