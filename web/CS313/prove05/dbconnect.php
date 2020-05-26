@@ -1,9 +1,9 @@
 <?php
 require_once('./core/config.php');
 
-$mysqli = new mysqli($host, $username, $password, $dbname);
-if ($mysqli->connect_error) {
-  error_log($mysqli->connect_error);
+$db = new PDO($host, $username, $password, $dbname);
+if ($db->connect_error) {
+  error_log($db->connect_error);
   exit;
 }
 ?>
