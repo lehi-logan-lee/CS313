@@ -1,12 +1,12 @@
 <?php
-require 'common.php';
-$pdo = connect();
+require 'dbconnect.php';
+$db = get_db();
 $s = $_GET["s"];
-$goods = $pdo->query("SELECT * FROM goods WHERE name='$s'");
+$goods = $db->query("SELECT * FROM goods WHERE name='$s'");
 require 't_index.php';
 
 $sql = "SELECT COUNT(code)FROM goods WHERE name='$s'";
-$stmt = $pdo->query($sql);
+$stmt = $db->query($sql);
 ?>
 
 <!-- 検索キーワードと検索結果件数を<h1>で括って表示する
