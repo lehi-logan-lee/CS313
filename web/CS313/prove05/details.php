@@ -12,16 +12,47 @@
 </div>
 
         <?php
-        $data[0] = $_GET['code'];
-        $data[1] = $_GET['name'];
-        $data[2] = $_GET['comment'];
-        $data[3] = $_GET['price']; 
-        echo img_tag($data[0])
-        ?>
-        <p class="goods"><?php echo $data[1] ?></p>
-        <p><?php echo nl2br($data[2]) ?></p>
 
-        <p><?php echo $data[3] ?> USD</p>
+        require 'dbconnect.php';
+        $db = get_db();
+
+        function validateInput($data){
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+    function displayQuery($id, $db) {
+        // $db=dbConnection();    
+         $stmt = $db->prepare('SELECT * FROM goods WHERE id = :id');
+         //$name= '$name';
+         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+         $stmt->execute();
+         $book = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         return $book;
+         }
+     ​
+         // If the page loads as a POST request, look for this variable, and if it is set
+     if(isset($_GET['id'])) {
+         // This is just for testing to make sure we have the correct text
+         //echo "<h1>" . $_POST['bookToFind'] . "</h1>";
+         // Validate & sanitize the input
+         $searchText = validateInput($_GET['id']);
+         // Now run the query to find the text in the database, and then save the results as a variable
+         $books = displayQuery($searchText, $db);
+       // Change the method name
+       print_r($books);
+       
+     ​
+       }
+        ?>
+                <?php echo img_tag($books['code']) ?>
+
+        <p class="goods"><?php echo $books['name'] ?></p>
+        <p><?php echo nl2br($books['comment']) ?></p>
+
+        <p><?php echo $books['price'] ?> USD</p>
         <form action="cart.php" method="post">
           <select name="num">
             <?php

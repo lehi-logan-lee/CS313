@@ -30,7 +30,9 @@
   <?php foreach ($goods as $g) { ?>
     <tr>
       <td height="230">
-      <?php echo "<a href=details.php?code=$g['code']&name=$g['name']&comment=$g['comment']&price=$g['price']>Product Details</a>"; ?>
+      <?php  
+      echo "<a href='details.php?id={$g['code']}'<strong>" . $g['name'] .' ' . $g['comment'] .':' . $row['price'] . '</strong></a>';
+      ?>
       <?php echo img_tag($g['code']) ?>
       
       </td>
