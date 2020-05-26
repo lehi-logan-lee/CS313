@@ -11,11 +11,10 @@
 
 </div>
 
-<table class="sample">
-
-    <tr>
-      <td height="230">
-        <?php echo img_tag($g['code']) ?>
+        <?php 
+        $g=$_GET['id'];
+        echo img_tag($g['code'])
+        ?>
         <p class="goods"><?php echo $g['name'] ?></p>
         <p><?php echo nl2br($g['comment']) ?></p>
 
@@ -32,10 +31,6 @@
           <input type="submit" name="submit" value="Add to cart">
         </form>
         
-      </td>
-    </tr>
-
-</table>
 
 </body>
 </html>
