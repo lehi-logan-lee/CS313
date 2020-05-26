@@ -35,6 +35,7 @@
 </table>
 <div class="base">
   <a href="index.php">Home　　</a>
+  <a href="cart_empty.php">　Empty Cart　　</a>
 </div>
 </body>
 </html>
