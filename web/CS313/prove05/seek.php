@@ -2,7 +2,7 @@
 require 'dbconnect.php';
 $db = get_db();
 $s = $_GET["s"];
-$goods = $db->query("SELECT * FROM goods WHERE name='$s'");
+$goods = $db->query("SELECT * FROM goods WHERE name LIKE '%$s%'");
 require 't_index.php';
 
 $sql = "SELECT COUNT(code)FROM goods WHERE name='$s'";
