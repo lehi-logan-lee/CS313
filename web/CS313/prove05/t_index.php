@@ -31,7 +31,7 @@
     <tr>
       <td height="230">
       <?php echo '<a href="details.php?id=$g">
-            echo "img_tag($g[\'code\'])"
+            img_tag($g[\'code\'])
       </a>'  ?>
       </td>
     </tr>
