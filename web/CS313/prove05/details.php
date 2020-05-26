@@ -11,14 +11,17 @@
 
 </div>
 
-        <?php 
-        $g=$_GET['id'];
-        echo img_tag($g['code'])
+        <?php
+        $data[0] = $_GET['code'];
+        $data[1] = $_GET['name'];
+        $data[2] = $_GET['comment'];
+        $data[3] = $_GET['price']; 
+        echo img_tag($data[0])
         ?>
-        <p class="goods"><?php echo $g['name'] ?></p>
-        <p><?php echo nl2br($g['comment']) ?></p>
+        <p class="goods"><?php echo $data[1] ?></p>
+        <p><?php echo nl2br($data[2]) ?></p>
 
-        <p><?php echo $g['price'] ?> USD</p>
+        <p><?php echo $data[3] ?> USD</p>
         <form action="cart.php" method="post">
           <select name="num">
             <?php
