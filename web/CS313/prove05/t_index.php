@@ -30,9 +30,9 @@
   <?php foreach ($goods as $g) { ?>
     <tr>
       <td height="230">
-      <a herf="details.php?id=<?php $g ?>">
+      <a herf="details.php?id=<?php $g ?>">Item details</a>
       <?php echo img_tag($g['code']) ?>
-      </a>
+      
       </td>
     </tr>
   <?php } ?>
