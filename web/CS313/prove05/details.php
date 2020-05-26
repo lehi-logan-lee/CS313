@@ -42,7 +42,7 @@
          // Now run the query to find the text in the database, and then save the results as a variable
          $books = displayQuery($searchText, $db);
        // Change the method name
-       print_r($books);
+       //print_r($books);
        
      ​
        }
