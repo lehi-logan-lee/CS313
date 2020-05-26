@@ -30,7 +30,7 @@
   <?php foreach ($goods as $g) { ?>
     <tr>
       <td height="230">
-      <a herf="details.php?id=<?php $g ?>">Item details</a>
+      <?php echo "<a href=details.php?id=$g>Product Details</a>"; ?>
       <?php echo img_tag($g['code']) ?>
       
       </td>
