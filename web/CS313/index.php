@@ -13,7 +13,7 @@
   <li><a href="prove03/index.php">prove03</a></li>
   <li><a href="prove04.html">prove04</a></li>
   <li><a href="prove05/index.php">prove05</a></li>
-  <li><a href="prove06.php">prove06</a></li>
+  <li><a href="prove06/index.php">prove06</a></li>
   <li><a href="prove07.php">prove07</a></li>
   <li><a href="prove08.php">prove08</a></li>
   <li><a href="prove09.php">prove09</a></li>
