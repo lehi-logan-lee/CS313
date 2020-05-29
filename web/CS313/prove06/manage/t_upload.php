@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>商品画像アップロード</title>
+<title>Upload Photo</title>
 <link rel="stylesheet" href="kanri.css">
 </head>
 <body>
@@ -10,17 +10,17 @@
   <?php if ($error) echo "<span class=\"error\">$error</span>" ?>
   <form action="upload.php" method="post" enctype="multipart/form-data">
     <p>
-      商品画像（JPEGのみ）<br>
+      Item Images（Only JPEG）<br>
       <input type="file" name="pic">
     </p>
     <p>
       <input type="hidden" name="code" value="<?php echo $code ?>">
-      <input type="submit" name="submit" value="追加">
+      <input type="submit" name="submit" value="Upload">
     </p>
   </form>
 </div>
 <div class="base">
-  <a href="index.php">一覧に戻る</a>　
+  <a href="index.php">Return</a>　
 </div>
 </body>
 </html>

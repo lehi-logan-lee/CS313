@@ -8,8 +8,8 @@
     $price = $_POST['price'];
     if (!$name) $error .= 'No Item Name.<br>';
     if (!$comment) $error .= 'No Item Details.<br>';
-    if (!$price) $error .= 'No Price.<br>';
-    if (preg_match('/\D/', $price)) $error .= 'Price Is Incorrect<br>';
+    if (!$price) $error .= 'Price can not be 0.<br>';
+    if (preg_match('/\D/', $price)) $error .= 'Price must be a integer.<br>';
     if (!$error) {
       $db->query("INSERT INTO goods(name,comment,price) VALUES('$name','$comment',$price)");
       header('Location: index.php');
