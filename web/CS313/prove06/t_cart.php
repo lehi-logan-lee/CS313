@@ -25,7 +25,7 @@
                 ?>
             </select>
               <input type="hidden" name="code" value="<?php echo $r['code'] ?>">
-              <input type="submit" name="submit" value="変更">
+              <input type="submit" name="submit" value="Update">
             </form>
       </td>
       <td><?php echo $r['price'] * $r['num'] ?> USD</td>

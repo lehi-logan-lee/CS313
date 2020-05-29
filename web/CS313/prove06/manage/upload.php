@@ -8,7 +8,7 @@
       header('Location: index.php');
       exit();
     } else {
-      $error .= 'ファイルを選択してください。<br>';
+      $error .= 'Please select the file<br>';
     }
   } else {
     $code = $_GET['code'];

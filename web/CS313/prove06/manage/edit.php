@@ -7,10 +7,10 @@
     $name = $_POST['name'];
     $comment = $_POST['comment'];
     $price = $_POST['price'];
-    if (!$name) $error .= '商品名がありません。<br>';
-    if (!$comment) $error .= '商品説明がありません。<br>';
-    if (!$price) $error .= '価格がありません。<br>';
-    if (preg_match('/\D/', $price)) $error .= '価格が不正です。<br>';
+    if (!$name) $error .= 'No Item Name.<br>';
+    if (!$comment) $error .= 'No Item Details.<br>';
+    if (!$price) $error .= 'No Price.<br>';
+    if (preg_match('/\D/', $price)) $error .= 'Price is incorrect.<br>';
     if (!$error) {
       $db->query("UPDATE goods SET name='$name',comment='$comment',price=$price WHERE code=$code");
       header('Location: index.php');

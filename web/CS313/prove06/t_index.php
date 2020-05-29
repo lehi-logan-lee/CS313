@@ -9,7 +9,7 @@
 <div id="header">
 <a href="index.php"><h1>Supermarket</h1></a>
 
-<a href="./manage/index.php"> Data Management</a>
+<a href="./manage/index.php"><h2> Data Management</h2></a>
 <form role="search" method="get" id="searchform" action="seek.php" >
     <input type="text" value="" name="s" class="s" />
     <input type="submit" class="searchsubmit" value="Search" />
