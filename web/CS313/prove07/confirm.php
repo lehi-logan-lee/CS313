@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require 'cart.php';
 ?>
 <!DOCTYPE html>
@@ -10,23 +10,7 @@ require 'cart.php';
 <body>
 <h1>Purchase Confirmation</h1>
 	
-<table class="tutorial-table">
-<tbody>
-<tr>
-<th><strong>Name</strong></th>
-<th><strong>Code</strong></th>
-<th class="align-right"><strong>Quantity</strong></th>
-<th class="align-right"><strong>Unit Price</strong></th>
-<th class="align-right"><strong>subtotal</strong></th>
-<th></th>
-</tr>	
-
-<tr>
-
-<td></td>
-</tr>
-</tbody>
-</table>		
+		
 
 
 <?php
