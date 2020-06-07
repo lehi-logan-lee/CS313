@@ -9,10 +9,7 @@ require 'cart.php';
 </head>
 <body>
 <h1>Purchase Confirmation</h1>
-<?php
-if(isset($_SESSION["cart_item"])){
-    $item_total = 0;
-?>	
+	
 <table class="tutorial-table">
 <tbody>
 <tr>
@@ -23,31 +20,14 @@ if(isset($_SESSION["cart_item"])){
 <th class="align-right"><strong>subtotal</strong></th>
 <th></th>
 </tr>	
-<?php		
-    foreach ($_SESSION["cart_item"] as $item){
-		?>
-				<tr>
-				<td><strong><?php echo $item["name"]; ?></strong></td>
-				<td><?php echo $item["code"]; ?></td>
-				<td align="right"><?php echo $item["quantity"]; ?></td>
-				<td align="right"><?php echo "$".$item["price"]; ?></td>
-        <td align="right"><?php echo "$".($item["price"]*$item["quantity"]); ?></td>
-				</tr>
-				<?php
-        $item_total += ($item["price"]*$item["quantity"]);
-		}
-		?>
 
 <tr>
-<td colspan="4" align=right><strong>Total:</strong></td>
-<td align=right><?php echo "$". number_format($item_total,2); ?></td>
+
 <td></td>
 </tr>
 </tbody>
 </table>		
-  <?php
-}
-?>
+
 
 <?php
   if (@$_POST['submit']) {
