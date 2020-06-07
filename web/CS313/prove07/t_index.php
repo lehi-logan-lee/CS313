@@ -53,6 +53,6 @@
   <?php } ?>
 </table>
 
-<a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+<a href="../index.php">CSE341 Assignments</a>
 </body>
 </html>
