@@ -35,7 +35,7 @@ require 'cart.php';
     $city = htmlspecialchars($_POST['city']);
     $state = htmlspecialchars($_POST['state']);
     echo "<b>Shipping Address: </b>" .$address .", " .$city .", " .$state ."<br>";
-    $_SESSION['cart_item'] = null;
+    $_SESSION['cart'] = null;
     exit();
   }
 ?>
