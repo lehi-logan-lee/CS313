@@ -47,7 +47,7 @@
        . "City: $city\n"
        . "State: $state\n\n";
        
-      foreach($_SESSION['cart'] as $code => $num) {
+      /*foreach($_SESSION['cart'] as $code => $num) {
         //echo "test4<br>";
         $st = $db->prepare("SELECT * FROM goods WHERE code=?");
         $st->execute(array($code));
@@ -58,7 +58,26 @@
           . "Quantity: $num\n\n";
         echo $body;
         echo "<br>";
-      }
+      }*/
+
+      foreach($_SESSION['cart'] as $code => $num) {
+        $st = $db->prepare("SELECT * FROM goods WHERE code=?");
+        $st->execute(array($code));
+        $row = $st->fetch();
+        $st->closeCursor();
+        ?>
+        <tr>
+          <td><?php echo $row['name'] ?></td>
+          <td><?php echo $row['price'] ?></td>
+          <td>
+              <?php echo $num ?>
+          </td>
+          <td><?php echo $r['price'] * $r['num'] ?> USD</td>
+        </tr>
+      <?php } ?>
+      <tr><td colspan='2'> </td><td><strong>Total</strong></td><td><?php echo $sum ?> USD</td></tr>
+</table>
+<?php
       echo "<br>";
       echo $shipAddr;
       //$from = "newuser@localhost";
@@ -71,7 +90,7 @@
   }
   //require 't_buy.php';
 ?>
-</table>
+
 <div class="base">
   <a href="index.php">Home　　</a>
 </div>
