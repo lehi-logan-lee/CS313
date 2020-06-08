@@ -7,7 +7,7 @@
     $name = htmlspecialchars($_POST['city']);
     $address = htmlspecialchars($_POST['address']);
     $tel = htmlspecialchars($_POST['state']);
-    echo $tel;
+    //echo $tel;
     //if (!$name) $error .= 'お名前を入力してください。<br>';
     //if (!$address) $error .= 'ご住所を入力してください。<br>';
     //if (!$tel) $error .= '電話番号を入力してください。<br>';
@@ -15,10 +15,27 @@
     if (!$error) {
       echo "test3<br>";
       $db = get_db();
+      echo '<h1>Purchase Confirmation</h1>'
+     
+      if(isset($_SESSION["cart_item"])){
+          $item_total = 0;
+     	echo '
+      <table class="tutorial-table">
+      <tbody>
+      <tr>
+      <th><strong>Name</strong></th>
+      <th><strong>Code</strong></th>
+      <th class="align-right"><strong>Quantity</strong></th>
+      <th class="align-right"><strong>Unit Price</strong></th>
+      <th class="align-right"><strong>subtotal</strong></th>
+      <th></th>
+      </tr>'	
+
       $body = "商品が購入されました。\n\n"
        . "お名前: $name\n"
        . "ご住所: $address\n"
        . "電話番号: $tel\n\n";
+       
       foreach($_SESSION['cart'] as $code => $num) {
         echo "test4<br>";
         $st = $db->prepare("SELECT * FROM goods WHERE code=?");
@@ -29,7 +46,7 @@
           . "単価: {$row['price']} 円\n"
           . "数量: $num\n\n";
       }
-      
+      echo $body;
       $from = "newuser@localhost";
       $to = "newuser@localhost";
       mb_send_mail($to, "購入メール", $body, "From: $from");
