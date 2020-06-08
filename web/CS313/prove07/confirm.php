@@ -1,59 +1,37 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<TITLE>Confirmation</TITLE>
-<link href="shop.css" type="text/css" rel="stylesheet" />
-</head>
-<body>
-<h1>Purchase Confirmation</h1>
 <?php
-if(isset($_SESSION["cart"])){
-    $item_total = 0;
-    echo $item_total;
-?>	
-<table class="tutorial-table">
-<tbody>
-<tr>
-<th><strong>Name</strong></th>
-<th><strong>Code</strong></th>
-<th class="align-right"><strong>Quantity</strong></th>
-<th class="align-right"><strong>Unit Price</strong></th>
-<th class="align-right"><strong>subtotal</strong></th>
-<th></th>
-</tr>	
-<?php		
-    foreach ($_SESSION["cart"] as $item){
-		?>
-				<tr>
-				<td><strong><?php echo $item["name"]; ?></strong></td>
-				<td align="right"><?php echo $item["num"]; ?></td>
-				<td align="right"><?php echo "$".$item["price"]; ?></td>
-        <td align="right"><?php echo "$".($item["price"]*$item["num"]); ?></td>
-				</tr>
-				<?php
-        $item_total += ($item["price"]*$item["num"]);
-		}
-		?>
+  require 'dbconnect.php';
 
-<tr>
-<td colspan="4" align=right><strong>Total:</strong></td>
-<td align=right><?php echo "$". number_format($item_total,2); ?></td>
-<td></td>
-</tr>
-</tbody>
-</table>		
-  <?php
-}
-?>
-
-<?php
+  $error = $name = $address = $tel = '';
   if (@$_POST['submit']) {
+    $name = htmlspecialchars($_POST['city']);
     $address = htmlspecialchars($_POST['address']);
-    $city = htmlspecialchars($_POST['city']);
-    $state = htmlspecialchars($_POST['state']);
-    echo "<b>Shipping Address: </b>" .$address .", " .$city .", " .$state ."<br>";
-    $_SESSION['cart'] = null;
-    exit();
+    $tel = htmlspecialchars($_POST['state']);
+    if (!$name) $error .= 'お名前を入力してください。<br>';
+    if (!$address) $error .= 'ご住所を入力してください。<br>';
+    if (!$tel) $error .= '電話番号を入力してください。<br>';
+    if (preg_match('/[^\d-]/', $tel)) $error .= '電話番号が正しくありません。<br>';
+    if (!$error) {
+      $db = get_db();
+      $body = "商品が購入されました。\n\n"
+       . "お名前: $name\n"
+       . "ご住所: $address\n"
+       . "電話番号: $tel\n\n";
+      foreach($_SESSION['cart'] as $code => $num) {
+        $st = $db->prepare("SELECT * FROM goods WHERE code=?");
+        $st->execute(array($code));
+        $row = $st->fetch();
+        $st->closeCursor();
+        $body .= "商品名: {$row['name']}\n"
+          . "単価: {$row['price']} 円\n"
+          . "数量: $num\n\n";
+      }
+      $from = "newuser@localhost";
+      $to = "newuser@localhost";
+      mb_send_mail($to, "購入メール", $body, "From: $from");
+      $_SESSION['cart'] = null;
+      //require 't_buy_complete.php';
+      exit();
+    }
   }
+  //require 't_buy.php';
 ?>
-</body>
-</html>

@@ -13,7 +13,7 @@ function myFunction() {
 <body>
 <h1>Check Out</h1>
 <div class="base">
-  <form id="myForm" action="cart.php" method="post">
+  <form id="myForm" action="comfirm.php" method="post">
     <p>
       Address<br>
       <input type="text" name="address" size="60" value="<?php echo $address ?>" required>
