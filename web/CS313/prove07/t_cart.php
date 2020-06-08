@@ -34,7 +34,7 @@
   <tr><td colspan='2'> </td><td><strong>Total</strong></td><td><?php echo $sum ?> USD</td></tr>
 </table>
 <div class="base">
-  <a href="index.php">Home　　</a>
+  <a href="index.php">Browse　　</a>
   <a href="cart_empty.php">　Empty Cart　　</a>
   <a href="checkout.php" id="btnHome" > Check Out</a>
 </div>

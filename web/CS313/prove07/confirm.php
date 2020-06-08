@@ -52,11 +52,9 @@
       <tr><td colspan="4"><strong><?php echo $shipAddr ?></strong></td></tr>
 </table>
 <div class="base">
-  <a href="index.php">Home　　</a>
+  <a href="index.php">Browse</a>
 </div>
 <?php
-      //echo "<br>";
-      //echo $shipAddr;
       //$from = "newuser@localhost";
       //$to = "newuser@localhost";
       //mb_send_mail($to, "購入メール", $body, "From: $from");
