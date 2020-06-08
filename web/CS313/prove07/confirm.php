@@ -1,8 +1,9 @@
 <?php
   require 'dbconnect.php';
-
+  echo "test1<br>";
   $error = $name = $address = $tel = '';
   if (@$_POST['submit']) {
+    echo "test2<br>";
     $name = htmlspecialchars($_POST['city']);
     $address = htmlspecialchars($_POST['address']);
     $tel = htmlspecialchars($_POST['state']);
@@ -11,6 +12,7 @@
     if (!$tel) $error .= '電話番号を入力してください。<br>';
     if (preg_match('/[^\d-]/', $tel)) $error .= '電話番号が正しくありません。<br>';
     if (!$error) {
+      echo "test3<br>";
       $db = get_db();
       $body = "商品が購入されました。\n\n"
        . "お名前: $name\n"
@@ -25,6 +27,7 @@
           . "単価: {$row['price']} 円\n"
           . "数量: $num\n\n";
       }
+      echo "test4<br>";
       $from = "newuser@localhost";
       $to = "newuser@localhost";
       mb_send_mail($to, "購入メール", $body, "From: $from");
