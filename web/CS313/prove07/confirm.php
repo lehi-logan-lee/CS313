@@ -15,7 +15,7 @@
     if (!$error) {
       echo "test3<br>";
       $db = get_db();
-      echo '<h1>Purchase Confirmation</h1>'
+     // echo '<h1>Purchase Confirmation</h1>'
      
       //if(isset($_SESSION["cart_item"])){
           //$item_total = 0;
