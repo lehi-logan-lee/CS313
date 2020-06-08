@@ -8,6 +8,7 @@
 <?php
 if(isset($_SESSION["cart"])){
     $item_total = 0;
+    echo $item_total;
 ?>	
 <table class="tutorial-table">
 <tbody>
