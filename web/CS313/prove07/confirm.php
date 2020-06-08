@@ -37,16 +37,18 @@
        . "State: $state\n\n";
        
       foreach($_SESSION['cart'] as $code => $num) {
-        echo "test4<br>";
+        //echo "test4<br>";
         $st = $db->prepare("SELECT * FROM goods WHERE code=?");
         $st->execute(array($code));
         $row = $st->fetch();
         $st->closeCursor();
-        $body .= "Item Name: {$row['name']}\n"
+        $body = "Item Name: {$row['name']}\n"
           . "Unit Price: {$row['price']} USD\n"
           . "Quantity: $num\n\n";
         echo $body;
+        echo "<br>";
       }
+      echo "<br>";
       echo $shipAddr;
       //$from = "newuser@localhost";
       //$to = "newuser@localhost";
