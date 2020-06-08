@@ -35,17 +35,17 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
 require("dbConnect.php");
 $db = get_db();
-
-$query = 'INSERT INTO login(username, password) VALUES(:username, :password)';
-$statement = $db->prepare($query);
-$statement->bindValue(':username', $username);
+//$db->query("INSERT INTO goods(name,comment,price) VALUES('$name','$comment',$price)");
+$query = ("INSERT INTO login(username, password) VALUES('$username', '$password')");
+//$statement = $db->prepare($query);
+//$statement->bindValue(':username', $username);
 
 // **********************************************
 // NOTICE: We are submitting the hashed password!
 // **********************************************
-$statement->bindValue(':password', $hashedPassword);
+//$statement->bindValue(':password', $hashedPassword);
 
-$statement->execute();
+//$statement->execute();
 
 
 // finally, redirect them to the sign in page
