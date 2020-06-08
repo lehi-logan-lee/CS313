@@ -17,9 +17,9 @@
       $db = get_db();
       echo '<h1>Purchase Confirmation</h1>'
      
-      if(isset($_SESSION["cart_item"])){
-          $item_total = 0;
-     /*	echo '
+      //if(isset($_SESSION["cart_item"])){
+          //$item_total = 0;
+     	echo '
       <table class="tutorial-table">
       <tbody>
       <tr>
@@ -29,7 +29,7 @@
       <th class="align-right"><strong>Unit Price</strong></th>
       <th class="align-right"><strong>subtotal</strong></th>
       <th></th>
-      </tr>'*/	
+      </tr>'	
 
       $body = "Your information\n\n"
        . "Name: $name\n"
@@ -46,7 +46,7 @@
           . "Unit Price: {$row['price']} USD\n"
           . "Quantity: $num\n\n";
       }
-      //echo $body;
+      echo $body;
       //$from = "newuser@localhost";
       //$to = "newuser@localhost";
       //mb_send_mail($to, "購入メール", $body, "From: $from");
