@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Purchase Information and Shipping Address</h1>
-<h3>Thank you! your finsished the following purchase</h3>
+<h3 style="text-align:center">Thank you! your finsished the following purchase</h3>
 <table>
   <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
 <?php
@@ -45,11 +45,11 @@
           <td>
               <?php echo $num ?>
           </td>
-          <td><?php echo $row['price'] * $row['num'] ?> USD</td>
+          <td><?php echo $row['price'] * $num ?> USD</td>
         </tr>
       <?php } ?>
       <tr><td colspan='2'> </td><td><strong>Total</strong></td><td><?php echo $sum ?> USD</td></tr>
-      <tr><td><?php echo $shipAddr ?></td></tr>
+      <tr><td colspan="4"><strong><?php echo $shipAddr ?></strong></td></tr>
 </table>
 <?php
       //echo "<br>";
