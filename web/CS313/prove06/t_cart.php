@@ -36,6 +36,7 @@
 <div class="base">
   <a href="index.php">Home　　</a>
   <a href="cart_empty.php">　Empty Cart　　</a>
+  <a href="checkout.php" id="btnHome" > Check Out</a>
 </div>
 </body>
 </html>

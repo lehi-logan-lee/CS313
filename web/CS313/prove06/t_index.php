@@ -10,6 +10,7 @@
 <a href="index.php"><h1>Supermarket</h1></a>
 
 <a href="./manage/index.php"><h2> Data Management</h2></a>
+<a href="login.php">Login　</a>
 <form role="search" method="get" id="searchform" action="seek.php" >
     <input type="text" value="" name="s" class="s" />
     <input type="submit" class="searchsubmit" value="Search" />
