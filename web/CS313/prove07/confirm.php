@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>cart | Supermarket</title>
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+<h1>cart</h1>
+<table>
+  <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
 <?php
   require 'dbconnect.php';
   //echo "test1<br>";
@@ -60,3 +71,9 @@
   }
   //require 't_buy.php';
 ?>
+</table>
+<div class="base">
+  <a href="index.php">Home　　</a>
+</div>
+</body>
+</html>
