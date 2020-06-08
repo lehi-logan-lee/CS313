@@ -29,8 +29,8 @@
       $db = get_db();
 
       $shipAddr = "Your Shipping Address: \n\n"
-       . "$address\n"
-       . "City: $city\n"
+       . "$address\n\n"
+       . "City: $city\n\n"
        . "State: $state\n\n";
        
       foreach($_SESSION['cart'] as $code => $num) {
@@ -51,6 +51,9 @@
       <tr><td colspan='2'> </td><td><strong>Total</strong></td><td><?php echo $sum ?> USD</td></tr>
       <tr><td colspan="4"><strong><?php echo $shipAddr ?></strong></td></tr>
 </table>
+<div class="base">
+  <a href="index.php">Home　　</a>
+</div>
 <?php
       //echo "<br>";
       //echo $shipAddr;
@@ -65,8 +68,5 @@
   //require 't_buy.php';
 ?>
 
-<div class="base">
-  <a href="index.php">Home　　</a>
-</div>
 </body>
 </html>
