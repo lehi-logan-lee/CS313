@@ -45,6 +45,7 @@
         $body .= "Item Name: {$row['name']}\n"
           . "Unit Price: {$row['price']} USD\n"
           . "Quantity: $num\n\n";
+        echo $body;
       }
       echo $body;
       //$from = "newuser@localhost";
