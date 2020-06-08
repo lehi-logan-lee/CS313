@@ -31,10 +31,10 @@
       <th></th>
       </tr>'	
 
-      $body = "商品が購入されました。\n\n"
-       . "お名前: $name\n"
-       . "ご住所: $address\n"
-       . "電話番号: $tel\n\n";
+      $body = "Your information\n\n"
+       . "Name: $name\n"
+       . "Address: $address\n"
+       . "Phone: $tel\n\n";
        
       foreach($_SESSION['cart'] as $code => $num) {
         echo "test4<br>";
@@ -42,18 +42,18 @@
         $st->execute(array($code));
         $row = $st->fetch();
         $st->closeCursor();
-        $body .= "商品名: {$row['name']}\n"
-          . "単価: {$row['price']} 円\n"
-          . "数量: $num\n\n";
+        $body .= "Item Name: {$row['name']}\n"
+          . "Unit Price: {$row['price']} USD\n"
+          . "Quantity: $num\n\n";
       }
-      echo $body;
-      $from = "newuser@localhost";
-      $to = "newuser@localhost";
-      mb_send_mail($to, "購入メール", $body, "From: $from");
+      //echo $body;
+      //$from = "newuser@localhost";
+      //$to = "newuser@localhost";
+      //mb_send_mail($to, "購入メール", $body, "From: $from");
       $_SESSION['cart'] = null;
-      require 't_buy_complete.php';
+      //require 't_buy_complete.php';
       exit();
     }
   }
-  require 't_buy.php';
+  //require 't_buy.php';
 ?>
