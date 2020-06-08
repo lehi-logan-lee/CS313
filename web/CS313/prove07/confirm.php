@@ -19,7 +19,7 @@
      
       if(isset($_SESSION["cart_item"])){
           $item_total = 0;
-     	echo '
+     /*	echo '
       <table class="tutorial-table">
       <tbody>
       <tr>
@@ -29,7 +29,7 @@
       <th class="align-right"><strong>Unit Price</strong></th>
       <th class="align-right"><strong>subtotal</strong></th>
       <th></th>
-      </tr>'	
+      </tr>'*/	
 
       $body = "Your information\n\n"
        . "Name: $name\n"
