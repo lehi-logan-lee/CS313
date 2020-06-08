@@ -6,7 +6,8 @@
 <link rel="stylesheet" href="shop.css">
 </head>
 <body>
-<h1>cart</h1>
+<h1>Purchase Information and Shipping Address</h1>
+<h3>Thank you! your finsished the following purchase</h3>
 <table>
   <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
 <?php
@@ -26,40 +27,12 @@
     if (!$error) {
       //echo "test3<br>";
       $db = get_db();
-     // echo '<h1>Purchase Confirmation</h1>'
-     
-      //if(isset($_SESSION["cart_item"])){
-          //$item_total = 0;
-     	/*echo '
-      <table class="tutorial-table">
-      <tbody>
-      <tr>
-      <th><strong>Name</strong></th>
-      <th><strong>Code</strong></th>
-      <th class="align-right"><strong>Quantity</strong></th>
-      <th class="align-right"><strong>Unit Price</strong></th>
-      <th class="align-right"><strong>subtotal</strong></th>
-      <th></th>
-      </tr>'	*/
 
       $shipAddr = "Your Shipping Address: \n\n"
        . "$address\n"
        . "City: $city\n"
        . "State: $state\n\n";
        
-      /*foreach($_SESSION['cart'] as $code => $num) {
-        //echo "test4<br>";
-        $st = $db->prepare("SELECT * FROM goods WHERE code=?");
-        $st->execute(array($code));
-        $row = $st->fetch();
-        $st->closeCursor();
-        $body = "Item Name: {$row['name']}\n"
-          . "Unit Price: {$row['price']} USD\n"
-          . "Quantity: $num\n\n";
-        echo $body;
-        echo "<br>";
-      }*/
-
       foreach($_SESSION['cart'] as $code => $num) {
         $st = $db->prepare("SELECT * FROM goods WHERE code=?");
         $st->execute(array($code));
@@ -72,14 +45,15 @@
           <td>
               <?php echo $num ?>
           </td>
-          <td><?php echo $r['price'] * $r['num'] ?> USD</td>
+          <td><?php echo $row['price'] * $row['num'] ?> USD</td>
         </tr>
       <?php } ?>
       <tr><td colspan='2'> </td><td><strong>Total</strong></td><td><?php echo $sum ?> USD</td></tr>
+      <tr><td><?php echo $shipAddr ?></td></tr>
 </table>
 <?php
-      echo "<br>";
-      echo $shipAddr;
+      //echo "<br>";
+      //echo $shipAddr;
       //$from = "newuser@localhost";
       //$to = "newuser@localhost";
       //mb_send_mail($to, "購入メール", $body, "From: $from");
