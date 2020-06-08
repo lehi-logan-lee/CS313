@@ -1,3 +1,20 @@
+<?php
+/**********************************************************
+* File: home.php
+* Author: Br. Burton
+* 
+* Description: This is the home page. It checks that a user
+*  exists on the session and redirects to the login page
+*  if it does not.
+***********************************************************/
+session_start();
+
+if (isset($_SESSION['username']))
+{
+	$username = $_SESSION['username'];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +25,12 @@
 <body>
 <div id="header">
 <a href="index.php"><h1>Supermarket</h1></a>
+
+<h1>Welcome to the homepage!</h1>
+
+Your username is: <?= $username ?><br /><br />
+
+<a href="signOut.php">Sign Out</a>
 
 <a href="./manage/index.php"><h2> Data Management</h2></a>
 <a href="login.php">Login　</a>
