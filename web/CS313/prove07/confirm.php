@@ -37,6 +37,7 @@
         $st = $db->prepare("SELECT * FROM goods WHERE code=?");
         $st->execute(array($code));
         $row = $st->fetch();
+        $sum += $num * $row['price'];
         $st->closeCursor();
         ?>
         <tr>
