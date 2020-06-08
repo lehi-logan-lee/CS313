@@ -1,19 +1,19 @@
 <?php
   require 'dbconnect.php';
-  echo "test1<br>";
+  //echo "test1<br>";
   $error = $name = $address = $tel = '';
   if (@$_POST['submit']) {
-    echo "test2<br>";
-    $name = htmlspecialchars($_POST['city']);
+    //echo "test2<br>";
+    $city = htmlspecialchars($_POST['city']);
     $address = htmlspecialchars($_POST['address']);
-    $tel = htmlspecialchars($_POST['state']);
+    $state = htmlspecialchars($_POST['state']);
     //echo $tel;
     //if (!$name) $error .= 'お名前を入力してください。<br>';
     //if (!$address) $error .= 'ご住所を入力してください。<br>';
     //if (!$tel) $error .= '電話番号を入力してください。<br>';
     //if (preg_match('/[^\d-]/', $tel)) $error .= '電話番号が正しくありません。<br>';
     if (!$error) {
-      echo "test3<br>";
+      //echo "test3<br>";
       $db = get_db();
      // echo '<h1>Purchase Confirmation</h1>'
      
@@ -31,10 +31,10 @@
       <th></th>
       </tr>'	*/
 
-      $body = "Your information\n\n"
-       . "Name: $name\n"
-       . "Address: $address\n"
-       . "Phone: $tel\n\n";
+      $shipAddr = "Your Shipping Address: \n\n"
+       . "$address\n"
+       . "City: $city\n"
+       . "State: $state\n\n";
        
       foreach($_SESSION['cart'] as $code => $num) {
         echo "test4<br>";
@@ -47,7 +47,7 @@
           . "Quantity: $num\n\n";
         echo $body;
       }
-      echo $body;
+      echo $shipAddr;
       //$from = "newuser@localhost";
       //$to = "newuser@localhost";
       //mb_send_mail($to, "購入メール", $body, "From: $from");
