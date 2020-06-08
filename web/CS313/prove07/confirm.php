@@ -46,7 +46,7 @@
           . "Unit Price: {$row['price']} USD\n"
           . "Quantity: $num\n\n";
       }
-      echo $body;
+      //echo $body;
       //$from = "newuser@localhost";
       //$to = "newuser@localhost";
       //mb_send_mail($to, "購入メール", $body, "From: $from");
