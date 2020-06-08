@@ -32,7 +32,7 @@ function myFunction() {
   </form>
 </div>
 <div class="base">
-  <a href="index.php">Browse     </a> 
+  <a href="index.php">Browse　　</a> 
   <a href="cart.php">Cart</a>
 </div>
 </body>
