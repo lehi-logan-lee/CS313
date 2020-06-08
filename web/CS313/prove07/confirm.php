@@ -1,25 +1,3 @@
-<?php
-session_start();
-require_once ("dbconnect.php");
-$db = get_db();
-//$product = new Product();
-//$productArray = $product->getAllProduct();
-$rows = array();
-$sum = 0;
-if (!isset($_SESSION['cart'])) $_SESSION['cart'] = array();
-if (@$_POST['submit']) {
-  @$_SESSION['cart'][$_POST['code']] = $_POST['num'];
-}
-foreach($_SESSION['cart'] as $code => $num) {
-  $st = $db->prepare("SELECT * FROM goods WHERE code=?");
-  $st->execute(array($code));
-  $row = $st->fetch();
-  $st->closeCursor();
-  $row['num'] = strip_tags($num);
-  $sum += $num * $row['price'];
-  $rows[] = $row;
-}
-?>
 <!DOCTYPE html>
 <html lang="en"><head>
 <TITLE>Confirmation</TITLE>
@@ -42,7 +20,7 @@ if(isset($_SESSION["cart"])){
 <th></th>
 </tr>	
 <?php		
-    foreach ($rows as $item){
+    foreach ($_SESSION["cart"] as $item){
 		?>
 				<tr>
 				<td><strong><?php echo $item["name"]; ?></strong></td>
