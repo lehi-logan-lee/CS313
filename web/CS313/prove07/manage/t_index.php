@@ -23,7 +23,7 @@
       <td width="80">
         <p><?php echo $g['price'] ?> USD</p>
         <p><a href="edit.php?code=<?php echo $g['code'] ?>">Update</a></p>
-        <p><a href="upload.php?code=<?php echo $g['code'] ?>">Image</a></p>
+
         <p><a href="delete.php?code=<?php echo $g['code'] ?>" onclick="return confirm('Are you sure to delete？')">Delete</a></p>
       </td>
     </tr>
